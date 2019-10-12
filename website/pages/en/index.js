@@ -60,13 +60,13 @@ class HomeSplash extends React.Component {
 
     return (
       <SplashContainer>
-        <Logo img_src={`${baseUrl}img/undraw_monitor.svg`} />
+        <Logo img_src="https://raw.githubusercontent.com/tacnoman/dephpugger/master/images/logo.png" />
         <div className="inner">
           <ProjectTitle siteConfig={siteConfig} />
           <PromoSection>
-            <Button href="#try">Try It Out</Button>
-            <Button href={docUrl('doc1.html')}>Example Link</Button>
-            <Button href={docUrl('doc2.html')}>Example Link 2</Button>
+            <Button href={docUrl('installation/dependencies')}>Installation</Button>
+            <Button href="https://github.com/tacnoman/dephpugger" target="_blank">Github</Button>
+            <Button href="https://packagist.org/packages/tacnoman/dephpugger" target="_blank">Packagist</Button>
           </PromoSection>
         </div>
       </SplashContainer>
@@ -96,8 +96,8 @@ class Index extends React.Component {
       <div
         className="productShowcaseSection paddingBottom"
         style={{textAlign: 'center'}}>
-        <h2>Feature Callout</h2>
-        <MarkdownBlock>These are features of this project</MarkdownBlock>
+        <h2>Debug in terminal</h2>
+        <script type="text/javascript" src="https://asciinema.org/a/115976.js" id="asciicast-115976" async></script>
       </div>
     );
 
@@ -197,11 +197,11 @@ class Index extends React.Component {
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
-          <Features />
+          {/* <Features /> */}
           <FeatureCallout />
-          <LearnHow />
-          <TryOut />
-          <Description />
+          {/* <LearnHow /> */}
+          {/* <TryOut /> */}
+          {/* <Description /> */}
           <Showcase />
         </div>
       </div>
