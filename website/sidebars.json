@@ -1,10 +1,19 @@
 {
   "docs": {
-    "Docusaurus": ["doc1"],
-    "First Category": ["doc2"],
-    "Second Category": ["doc3"]
-  },
-  "docs-other": {
-    "First Category": ["doc4", "doc5"]
+    "Dephpugger": ["index"],
+    "Installation": [
+      "installation/dependencies",
+      "installation/xdebug",
+      "installation/composer",
+      "installation/browser_plugin",
+      "installation/dephpugger"
+    ],
+    "Usage": [
+      "usage/usage_video_tutorial",
+      "usage/running_dephpugger",
+      "usage/commands_to_run",
+      "usage/running_for_web",
+      "usage/running_with_phpunit"
+    ]
   }
 }
