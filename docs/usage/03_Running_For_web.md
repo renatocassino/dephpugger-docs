@@ -26,7 +26,7 @@ $ dephpugger server
 This commands run `php -S <host>:<port> -t /path/to/project -dxdebug.remote_enable=1 -dxdeb...` this command in background.
 
 Create a simple `index.php` with a simple hello world and see working.
-You can change the default port changing the [configuration](04_Configuration).
+You can change the default port changing the [configuration](/docs/configuration/config).
 
 Open another terminal window and start the dephpugger.
 
@@ -40,7 +40,7 @@ In your index.php code, add this line.
 xdebug_break();
 ```
 
-You must activate your browser plugin (How activate my brower plugin? Click [here](02_Installation/04_Browser_Plugin.md))
+You must activate your browser plugin (How activate my brower plugin? Click [here](/docs/installation/browser_plugin))
 
 Now you can refresh the page and see the debugger works.
 

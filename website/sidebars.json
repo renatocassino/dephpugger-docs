@@ -14,6 +14,16 @@
       "usage/commands_to_run",
       "usage/running_for_web",
       "usage/running_with_phpunit"
+    ],
+    "Configuration": [
+      "configuration/config",
+      "configuration/lumen",
+      "configuration/laravel",
+      "configuration/zf2",
+      "configuration/symfony",
+      "configuration/slim",
+      "configuration/silex",
+      "configuration/yii2"
     ]
   }
 }
