@@ -37,44 +37,49 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('doc1.html', this.props.language)}>
-              Getting Started (or other categories)
+            <a href={this.docUrl('installation/dependencies', this.props.language)}>
+              Getting Started
             </a>
-            <a href={this.docUrl('doc2.html', this.props.language)}>
-              Guides (or other categories)
+            <a href={this.docUrl('usage/commands_to_run', this.props.language)}>
+              Usage
             </a>
-            <a href={this.docUrl('doc3.html', this.props.language)}>
-              API Reference (or other categories)
+            <a href={this.docUrl('configuration/config', this.props.language)}>
+              Configuration Reference
             </a>
           </div>
           <div>
-            <h5>Community</h5>
-            <a href={this.pageUrl('users.html', this.props.language)}>
-              User Showcase
+            <h5>Articles and Videos</h5>
+            <a
+              target="_blank"
+              rel="noreferrer noopener"
+              href="https://medium.com/@mosesliao/debug-drupal-using-dephpugger-a0839f878b56"
+            >
+              How debug Drupal applications
             </a>
             <a
-              href="https://stackoverflow.com/questions/tagged/"
               target="_blank"
-              rel="noreferrer noopener">
-              Stack Overflow
+              rel="noreferrer noopener"
+              href="https://www.youtube.com/watch?v=jmMgZ3GqbcQ"
+            >
+              Singapore PHP User Group
             </a>
-            <a href="https://discordapp.com/">Project Chat</a>
             <a
-              href="https://twitter.com/"
               target="_blank"
-              rel="noreferrer noopener">
-              Twitter
+              rel="noreferrer noopener"
+              href="https://hackernoon.com/how-debug-php-applications-with-dephpugger-98cc234d917c"
+            >
+              How debug PHP in terminal
             </a>
           </div>
           <div>
             <h5>More</h5>
             <a href={`${this.props.config.baseUrl}blog`}>Blog</a>
-            <a href="https://github.com/">GitHub</a>
+            <a href="https://github.com/tacnoman/dephpugger">GitHub</a>
             <a
               className="github-button"
               href={this.props.config.repoUrl}
               data-icon="octicon-star"
-              data-count-href="/facebook/docusaurus/stargazers"
+              // data-count-href="/facebook/docusaurus/stargazers"
               data-show-count="true"
               data-count-aria-label="# stargazers on GitHub"
               aria-label="Star this project on GitHub">
@@ -106,7 +111,7 @@ class Footer extends React.Component {
             )}
           </div>
         </section>
-
+{/* 
         <a
           href="https://opensource.facebook.com/"
           target="_blank"
@@ -118,7 +123,7 @@ class Footer extends React.Component {
             width="170"
             height="45"
           />
-        </a>
+        </a> */}
         <section className="copyright">{this.props.config.copyright}</section>
       </footer>
     );
