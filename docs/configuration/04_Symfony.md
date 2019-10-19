@@ -4,16 +4,16 @@ title: Symfony
 sidebar_label: Symfony
 ---
 
-## Using Dephpugger in Symfony Framework
+## Using Dephpugger in Symfony Framework 4
 
 Add in root directory the file `.dephpugger.yml` with the content bellow.
 
 ```yml
 ---
 server:
-  path: ./web/
+  path: ./public/
   port: 8000
-  file: app.php
+  file: index.php
 ```
 
 Run the commands bellow in different terminal windows (You must run in the root path).
