@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Silex · Dephpugger</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## Using Dephpugger in Silex Framework"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Silex · Dephpugger"/><meta property="og:type" content="website"/><meta property="og:url" content="https://github.com/tacnoman/dephpugger/"/><meta property="og:description" content="## Using Dephpugger in Silex Framework"/><meta property="og:image" content="https://github.com/tacnoman/dephpugger/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://github.com/tacnoman/dephpugger/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/favicon.ico" alt="Dephpugger"/><h2 class="headerTitleWithLogo">Dephpugger</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/" target="_self">Docs</a></li><li class=""><a href="/about-us" target="_self">About Us</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Configuration</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Dephpugger</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/">About</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Installation</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/installation/dependencies">Dependencies</a></li><li class="navListItem"><a class="navItem" href="/docs/installation/xdebug">XDebug</a></li><li class="navListItem"><a class="navItem" href="/docs/installation/composer">Composer</a></li><li class="navListItem"><a class="navItem" href="/docs/installation/browser_plugin">Browser Plugin</a></li><li class="navListItem"><a class="navItem" href="/docs/installation/dephpugger">Dephpugger</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Usage</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/usage/usage_video_tutorial">Usage Video Tutorial</a></li><li class="navListItem"><a class="navItem" href="/docs/usage/running_dephpugger">Running Dephpugger</a></li><li class="navListItem"><a class="navItem" href="/docs/usage/commands_to_run">Commands to Run</a></li><li class="navListItem"><a class="navItem" href="/docs/usage/running_for_web">Running for Web</a></li><li class="navListItem"><a class="navItem" href="/docs/usage/running_with_phpunit">Running with PHPUnit</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Configuration</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/configuration/config">File Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/configuration/lumen">Lumen</a></li><li class="navListItem"><a class="navItem" href="/docs/configuration/laravel">Laravel</a></li><li class="navListItem"><a class="navItem" href="/docs/configuration/zf2">Zend Framework 2</a></li><li class="navListItem"><a class="navItem" href="/docs/configuration/symfony">Symfony</a></li><li class="navListItem"><a class="navItem" href="/docs/configuration/slim">Slim</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/configuration/silex">Silex</a></li><li class="navListItem"><a class="navItem" href="/docs/configuration/yii2">Yii2</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Silex</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="using-dephpugger-in-silex-framework"></a><a href="#using-dephpugger-in-silex-framework" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using Dephpugger in Silex Framework</h2>
+<p>Add in root directory the file <code>.dephpugger.yml</code> with the content bellow.</p>
+<pre><code class="hljs css language-yml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">server:</span>
+<span class="hljs-attr">  path:</span> <span class="hljs-string">./web/</span>
+<span class="hljs-attr">  port:</span> <span class="hljs-number">8888</span>
+</code></pre>
+<p>The Silex Framework start the web application in development using the composer running <code>composer run</code>.
+Go to your <code>composer.json</code> file and replace this:</p>
+<pre><code class="hljs css language-json">    "scripts": {
+        "run": [
+            "echo 'Started web server on http://localhost:8888'",
+            "php -S localhost:8888 -t web"
+        ]
+    }
+</code></pre>
+<p>To this:</p>
+<pre><code class="hljs css language-json">    "scripts": {
+        "run": [
+            "echo 'Started web server on http://localhost:8888'",
+            "dephpugger server" &lt;&lt; This line
+        ]
+    }
+</code></pre>
+<p>If you aren't using the dephpugger in global mode, you can change the line <code>dephpugger server</code> to <code>php vendor/bin/dephpugger server</code>.</p>
+<p>Run the commands bellow in different terminal windows (You must run in the root path).</p>
+<pre><code class="hljs css language-bash">$ COMPOSER_PROCESS_TIMEOUT=0 composer run <span class="hljs-comment"># To start a server</span>
+$ dephpugger debug <span class="hljs-comment"># Or "php vendor/bin/dephpugger debug" in local mode</span>
+</code></pre>
+<p>Open <a href="http://localhost:8888">http://localhost:8888</a> and get work!</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/configuration/slim"><span class="arrow-prev">← </span><span>Slim</span></a><a class="docs-next button" href="/docs/configuration/yii2"><span>Yii2</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#using-dephpugger-in-silex-framework">Using Dephpugger in Silex Framework</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/favicon.ico" alt="Dephpugger" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/installation/dependencies">Getting Started</a><a href="/docs/en/usage/commands_to_run">Usage</a><a href="/docs/en/configuration/config">Configuration Reference</a></div><div><h5>Articles and Videos</h5><a target="_blank" rel="noreferrer noopener" href="https://medium.com/@mosesliao/debug-drupal-using-dephpugger-a0839f878b56">How debug Drupal applications</a><a target="_blank" rel="noreferrer noopener" href="https://www.youtube.com/watch?v=jmMgZ3GqbcQ">Singapore PHP User Group</a><a target="_blank" rel="noreferrer noopener" href="https://hackernoon.com/how-debug-php-applications-with-dephpugger-98cc234d917c">How debug PHP in terminal</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/tacnoman/dephpugger">GitHub</a><a class="github-button" href="https://github.com/tacnoman/dephpugger" data-icon="octicon-star" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Tacnoman</section></footer></div></body></html>
