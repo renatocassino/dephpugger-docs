@@ -1,0 +1,34 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/package.lock') }}
+
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '20.x'
+      - run: cd website
+      - run: npm install
+      - run: npm run build
+      - run: echo 'dephpugger.cassino.dev' > ./build/dephpugger/CNAME
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./website/build/dephpugger
+
+      - run: 'curl -i -H ''Accept: application/json'' -H ''Content-Type:application/json'' -X POST --data ''{"content":"Deploy da aplicação *dephpugger.cassino.dev*","title":"Deploy finalizado"}'' https://discord.com/api/webhooks/788466760721367091/LgXmg6CNXGtshXpYGMLiXvQqyjpxLALYtCtmMxgYXfTJtGqlKeHTZpdK17UtDCzjkLD9'
