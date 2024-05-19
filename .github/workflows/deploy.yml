@@ -20,10 +20,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '20.x'
-      - run: cd website
-      - run: npm install
-      - run: npm run build
-      - run: echo 'dephpugger.cassino.dev' > ./build/dephpugger/CNAME
+      - run: cd website && npm install
+      - run: cd website && npm run build
+      - run: echo 'dephpugger.cassino.dev' > ./website/build/dephpugger/CNAME
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
